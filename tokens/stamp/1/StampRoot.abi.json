@@ -1,0 +1,149 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"manager","type":"address"},
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"},
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"tokenCode","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getManager",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "changeManager",
+			"inputs": [
+				{"name":"newManager","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"totalSupply","type":"uint128"}
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"addr","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "create",
+			"inputs": [
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"hash","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "getTokenAddress",
+			"inputs": [
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "setCreationParameters",
+			"inputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getCreationParameters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"}
+			]
+		},
+		{
+			"name": "setStampParameters",
+			"inputs": [
+				{"name":"minSealFee","type":"uint128"},
+				{"name":"minSealRxFee","type":"uint128"},
+				{"name":"requestEndorseFixIncome","type":"uint128"},
+				{"name":"minForAddFee","type":"uint128"},
+				{"name":"forAddFixIncome","type":"uint128"},
+				{"name":"endorseIncomePercent","type":"uint16"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getStampParameters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"minSealFee","type":"uint128"},
+				{"name":"minSealRxFee","type":"uint128"},
+				{"name":"requestEndorseFixIncome","type":"uint128"},
+				{"name":"minForAddFee","type":"uint128"},
+				{"name":"forAddFixIncome","type":"uint128"},
+				{"name":"endorseIncomePercent","type":"uint16"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "TK_CT_nifi_stamp1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_manager","type":"address"},
+		{"name":"_creationTopup","type":"uint128"},
+		{"name":"_minCreationFee","type":"uint128"},
+		{"name":"_name","type":"string"},
+		{"name":"_symbol","type":"string"},
+		{"name":"_tokenCode","type":"cell"},
+		{"name":"_totalSupply","type":"uint64"},
+		{"name":"_minSealFee","type":"uint128"},
+		{"name":"_minSealRxFee","type":"uint128"},
+		{"name":"_requestEndorseFixIncome","type":"uint128"},
+		{"name":"_minForAddFee","type":"uint128"},
+		{"name":"_forAddFixIncome","type":"uint128"},
+		{"name":"_endorseIncomePercent","type":"uint16"}
+	]
+}

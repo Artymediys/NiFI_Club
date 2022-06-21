@@ -1,0 +1,116 @@
+{
+	"ABI version": 2,
+	"header": ["pubkey", "time"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"owner","type":"uint256"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "receiveRandom",
+			"inputs": [
+				{"name":"_answer_id","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"random","type":"uint256"}
+			]
+		},
+		{
+			"name": "getRandom",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"random","type":"uint256"}
+			]
+		},
+		{
+			"name": "changeOwner",
+			"inputs": [
+				{"name":"owner","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "receiveInfo",
+			"inputs": [
+				{"name":"_answer_id","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"root","type":"address"},
+				{"name":"id","type":"uint128"},
+				{"name":"publicKey","type":"uint256"},
+				{"name":"owner","type":"uint256"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"}
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"root","type":"address"},
+				{"name":"id","type":"uint128"},
+				{"name":"publicKey","type":"uint256"},
+				{"name":"owner","type":"uint256"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"}
+			]
+		},
+		{
+			"name": "lockManager",
+			"inputs": [
+				{"name":"manager","type":"address"},
+				{"name":"unlockTime","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "lock",
+			"inputs": [
+				{"name":"unlockTime","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "unlock",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+		{"key":1,"name":"_root","type":"address"},
+		{"key":2,"name":"_id","type":"uint128"}
+	],
+	"events": [
+		{
+			"name": "ChangeOwnerEvent",
+			"inputs": [
+				{"name":"id","type":"uint128"},
+				{"name":"previousOwner","type":"uint256"},
+				{"name":"owner","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TK_MG_nifi_art1_1",
+			"inputs": [
+				{"name":"id","type":"uint128"}
+			],
+			"outputs": [
+			]
+		}
+	]
+}

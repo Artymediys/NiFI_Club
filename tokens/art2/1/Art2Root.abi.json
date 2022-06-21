@@ -1,0 +1,138 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"manager","type":"address"},
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"minMintFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"},
+				{"name":"mintTopup","type":"uint128"},
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"seriesCode","type":"cell"},
+				{"name":"tokenCode","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getManager",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "changeManager",
+			"inputs": [
+				{"name":"newManager","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"totalSupply","type":"uint128"}
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"addr","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "createSerie",
+			"inputs": [
+				{"name":"limit","type":"uint64"},
+				{"name":"hash","type":"uint256"},
+				{"name":"creatorPercent","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "getSeriesAddress",
+			"inputs": [
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "getTokenAddress",
+			"inputs": [
+				{"name":"serie","type":"uint64"},
+				{"name":"token","type":"uint64"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "setCreationParameters",
+			"inputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"minMintFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"},
+				{"name":"mintTopup","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getCreationParameters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"minMintFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"},
+				{"name":"mintTopup","type":"uint128"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "SR_CT_nifi_art2_1",
+			"inputs": [
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_manager","type":"address"},
+		{"name":"_minCreationFee","type":"uint128"},
+		{"name":"_minMintFee","type":"uint128"},
+		{"name":"_creationTopup","type":"uint128"},
+		{"name":"_mintTopup","type":"uint128"},
+		{"name":"_name","type":"string"},
+		{"name":"_symbol","type":"string"},
+		{"name":"_tokenCode","type":"cell"},
+		{"name":"_seriesCode","type":"cell"},
+		{"name":"_totalSupply","type":"uint64"}
+	]
+}

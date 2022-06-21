@@ -1,0 +1,269 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"owner","type":"address"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"},
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"hash","type":"uint256"},
+				{"name":"minRequestEndorseFee","type":"uint128"},
+				{"name":"minCancelEndorseFee","type":"uint128"},
+				{"name":"minForAddFee","type":"uint128"},
+				{"name":"forAddFixIncome","type":"uint128"},
+				{"name":"endorseIncomePercent","type":"uint16"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "changeOwner",
+			"inputs": [
+				{"name":"owner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "receiveArtInfo",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"hash","type":"uint256"}
+			]
+		},
+		{
+			"name": "getArtInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"hash","type":"uint256"}
+			]
+		},
+		{
+			"name": "getSeal",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"seal","type":"optional(address)"},
+				{"name":"corner","type":"uint8"}
+			]
+		},
+		{
+			"name": "getForever",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"forever","type":"optional(address)"}
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"root","type":"address"},
+				{"name":"id","type":"uint64"}
+			]
+		},
+		{
+			"name": "receiveTradeInfo",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"owner","type":"address"},
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"}
+			]
+		},
+		{
+			"name": "getTradeInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"owner","type":"address"},
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"}
+			]
+		},
+		{
+			"name": "lockManager",
+			"inputs": [
+				{"name":"manager","type":"address"},
+				{"name":"unlockTime","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "unlock",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "requestEndorse",
+			"inputs": [
+				{"name":"seal","type":"address"},
+				{"name":"places","type":"uint8"},
+				{"name":"price","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "cancelEndorse",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "endorse",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"place","type":"uint8"},
+				{"name":"sealOwner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setForever",
+			"inputs": [
+				{"name":"forever","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "delForever",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getParameters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"minRequestEndorseFee","type":"uint128"},
+				{"name":"minCancelEndorseFee","type":"uint128"},
+				{"name":"minForAddFee","type":"uint128"},
+				{"name":"forAddFixIncome","type":"uint128"}
+			]
+		}
+	],
+	"data": [
+		{"key":1,"name":"_root","type":"address"},
+		{"key":2,"name":"_id","type":"uint64"}
+	],
+	"events": [
+		{
+			"name": "TK_CO_nifi_stamp1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"newOwner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TK_MG_nifi_stamp1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"newManager","type":"address"},
+				{"name":"expirationTime","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TK_RQ_nifi_stamp1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"seal","type":"address"},
+				{"name":"sealPlaces","type":"uint8"},
+				{"name":"value","type":"uint64"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TK_RX_nifi_stamp1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TK_EN_nifi_stamp1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"seal","type":"address"},
+				{"name":"corner","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TK_FE_nifi_stamp1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"forever","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TK_FD_nifi_stamp1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"forever","type":"address"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_root","type":"address"},
+		{"name":"_id","type":"uint64"},
+		{"name":"_owner","type":"address"},
+		{"name":"_manager","type":"address"},
+		{"name":"_managerUnlockTime","type":"uint32"},
+		{"name":"_creator","type":"address"},
+		{"name":"_creatorPercent","type":"uint32"},
+		{"name":"_hash","type":"uint256"},
+		{"name":"_sealPlace","type":"uint8"},
+		{"name":"_seal","type":"optional(address)"},
+		{"name":"_sealValue","type":"uint128"},
+		{"name":"_sealPosiblePlaces","type":"uint8"},
+		{"name":"_forever","type":"optional(address)"},
+		{"name":"_minRequestEndorseFee","type":"uint128"},
+		{"name":"_minCancelEndorseFee","type":"uint128"},
+		{"name":"_minForAddFee","type":"uint128"},
+		{"name":"_forAddFixIncome","type":"uint128"},
+		{"name":"_endorseIncomePercent","type":"uint16"}
+	]
+}

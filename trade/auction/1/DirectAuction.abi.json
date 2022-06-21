@@ -1,0 +1,134 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"issuer","type":"address"},
+				{"name":"token","type":"address"},
+				{"name":"startBid","type":"uint128"},
+				{"name":"bidStep","type":"uint128"},
+				{"name":"minBidSubmissionFee","type":"uint128"},
+				{"name":"auctionIncomePercent","type":"uint32"},
+				{"name":"bidCost","type":"uint128"},
+				{"name":"startTime","type":"uint32"},
+				{"name":"endTime","type":"uint32"},
+				{"name":"showcasePercent","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onReceiveTradeInfoForCreation",
+			"inputs": [
+				{"name":"owner","type":"address"},
+				{"name":"value1","type":"address"},
+				{"name":"value2","type":"uint32"},
+				{"name":"value3","type":"address"},
+				{"name":"value4","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "bid",
+			"inputs": [
+				{"name":"price","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "finish",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onReceiveTradeInfo",
+			"inputs": [
+				{"name":"owner","type":"address"},
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"root","type":"address"},
+				{"name":"id","type":"uint64"},
+				{"name":"token","type":"address"},
+				{"name":"startBid","type":"uint128"},
+				{"name":"bidStep","type":"uint128"},
+				{"name":"auctionIncomePercent","type":"uint32"},
+				{"name":"minBidSubmissionFee","type":"uint128"},
+				{"name":"bidCost","type":"uint128"},
+				{"name":"startTime","type":"uint32"},
+				{"name":"endTime","type":"uint32"},
+				{"components":[{"name":"bidder","type":"address"},{"name":"value","type":"uint128"}],"name":"curBid","type":"tuple"}
+			]
+		}
+	],
+	"data": [
+		{"key":1,"name":"_root","type":"address"},
+		{"key":2,"name":"_id","type":"uint64"}
+	],
+	"events": [
+		{
+			"name": "AUC_BS_nifi_auc_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"bidValue","type":"uint128"},
+				{"name":"bidCreator","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "AUC_SC_nifi_auc_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"finalBidValue","type":"uint128"},
+				{"name":"bidCreator","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "AUC_EX_nifi_auc_1",
+			"inputs": [
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_root","type":"address"},
+		{"name":"_id","type":"uint64"},
+		{"name":"_issuer","type":"address"},
+		{"name":"_token","type":"address"},
+		{"name":"_startTime","type":"uint32"},
+		{"name":"_endTime","type":"uint32"},
+		{"name":"_askFinish","type":"uint32"},
+		{"name":"_startBid","type":"uint128"},
+		{"name":"_bidStep","type":"uint128"},
+		{"name":"_minBidSubmissionFee","type":"uint128"},
+		{"name":"_auctionIncomePercent","type":"uint32"},
+		{"name":"_bidCost","type":"uint128"},
+		{"components":[{"name":"bidder","type":"address"},{"name":"value","type":"uint128"}],"name":"_curBid","type":"tuple"},
+		{"name":"_showcasePercent","type":"uint32"}
+	]
+}

@@ -1,0 +1,188 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"owner","type":"address"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"},
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"hash","type":"uint256"},
+				{"name":"delForeverCost","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "changeOwner",
+			"inputs": [
+				{"name":"owner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "receiveArtInfo",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"hash","type":"uint256"}
+			]
+		},
+		{
+			"name": "getArtInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"hash","type":"uint256"}
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"root","type":"address"},
+				{"name":"id","type":"uint64"}
+			]
+		},
+		{
+			"name": "receiveTradeInfo",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"owner","type":"address"},
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"}
+			]
+		},
+		{
+			"name": "getTradeInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"owner","type":"address"},
+				{"name":"creator","type":"address"},
+				{"name":"creatorPercent","type":"uint32"},
+				{"name":"manager","type":"address"},
+				{"name":"managerUnlockTime","type":"uint32"}
+			]
+		},
+		{
+			"name": "getStamps",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"stamp","type":"address"},{"name":"owner","type":"address"},{"name":"seal","type":"address"},{"name":"place","type":"uint8"}],"name":"stamps","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "lockManager",
+			"inputs": [
+				{"name":"manager","type":"address"},
+				{"name":"unlockTime","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "unlock",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addStamp",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"owner","type":"address"},
+				{"name":"seal","type":"address"},
+				{"name":"place","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getParameters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"delForeverCost","type":"uint128"}
+			]
+		}
+	],
+	"data": [
+		{"key":1,"name":"_root","type":"address"},
+		{"key":2,"name":"_id","type":"uint64"}
+	],
+	"events": [
+		{
+			"name": "TK_CO_nifi_for1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"newOwner","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TK_MG_nifi_for1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"newManager","type":"address"},
+				{"name":"expirationTime","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "FOR_SC_nifi_for1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"token1Address","type":"address"},
+				{"name":"token2Address","type":"address"},
+				{"name":"token3Address","type":"address"},
+				{"name":"token4Address","type":"address"},
+				{"name":"sealAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "FOR_EX_nifi_for1_1",
+			"inputs": [
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_root","type":"address"},
+		{"name":"_id","type":"uint64"},
+		{"name":"_owner","type":"address"},
+		{"name":"_manager","type":"address"},
+		{"name":"_managerUnlockTime","type":"uint32"},
+		{"name":"_creator","type":"address"},
+		{"name":"_creatorPercent","type":"uint32"},
+		{"name":"_hash","type":"uint256"},
+		{"components":[{"name":"stamp","type":"address"},{"name":"owner","type":"address"},{"name":"seal","type":"address"},{"name":"place","type":"uint8"}],"name":"_stamps","type":"tuple[]"},
+		{"name":"_delForeverCost","type":"uint128"}
+	]
+}

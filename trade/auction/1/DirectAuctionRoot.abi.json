@@ -1,0 +1,204 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"manager","type":"address"},
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"auctionIncomePercent","type":"uint32"},
+				{"name":"creationTopup","type":"uint128"},
+				{"name":"minBidSubmissionFee","type":"uint128"},
+				{"name":"bidCost","type":"uint128"},
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"tokenCode","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "create",
+			"inputs": [
+				{"name":"token","type":"address"},
+				{"name":"startBid","type":"uint128"},
+				{"name":"bidStep","type":"uint128"},
+				{"name":"startTime","type":"uint32"},
+				{"name":"endTime","type":"uint32"},
+				{"name":"showcasePercent","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "receiveTokenAddress",
+			"inputs": [
+				{"name":"answerId","type":"uint32"},
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "getTokenAddress",
+			"inputs": [
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "getAuctionParameters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"minBidSubmissionFee","type":"uint128"},
+				{"name":"auctionIncomePercent","type":"uint32"},
+				{"name":"bidCost","type":"uint128"}
+			]
+		},
+		{
+			"name": "setAuctionParameters",
+			"inputs": [
+				{"name":"minBidSubmissionFee","type":"uint128"},
+				{"name":"auctionIncomePercent","type":"uint32"},
+				{"name":"bidCost","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"addr","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setCreationParameters",
+			"inputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "receiveCreationParameters",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"}
+			]
+		},
+		{
+			"name": "getCreationParameters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"}
+			]
+		},
+		{
+			"name": "changeManager",
+			"inputs": [
+				{"name":"manager","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "receiveManager",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"manager","type":"address"}
+			]
+		},
+		{
+			"name": "getManager",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"manager","type":"address"}
+			]
+		},
+		{
+			"name": "receiveInfo",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"totalSupply","type":"uint64"},
+				{"name":"publicKey","type":"uint256"}
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"totalSupply","type":"uint64"},
+				{"name":"publicKey","type":"uint256"}
+			]
+		},
+		{
+			"name": "getTokenCode",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"code","type":"cell"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "AUC_CT_nifi_auc_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"tokenAddress","type":"address"},
+				{"name":"startBid","type":"uint128"},
+				{"name":"bidStep","type":"uint128"},
+				{"name":"startTime","type":"uint32"},
+				{"name":"endTime","type":"uint32"},
+				{"name":"issuer","type":"address"},
+				{"name":"showcasePercent","type":"uint32"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_name","type":"string"},
+		{"name":"_symbol","type":"string"},
+		{"name":"_tokenCode","type":"cell"},
+		{"name":"_totalSupply","type":"uint64"},
+		{"name":"_manager","type":"address"},
+		{"name":"_minCreationFee","type":"uint128"},
+		{"name":"_creationTopup","type":"uint128"},
+		{"name":"_auctionIncomePercent","type":"uint32"},
+		{"name":"_minBidSubmissionFee","type":"uint128"},
+		{"name":"_bidCost","type":"uint128"}
+	]
+}

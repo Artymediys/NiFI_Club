@@ -1,0 +1,196 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"manager","type":"address"},
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"minAcceptFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"},
+				{"name":"askIncomePercent","type":"uint128"},
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"tokenCode","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "create",
+			"inputs": [
+				{"name":"token","type":"address"},
+				{"name":"price","type":"uint128"},
+				{"name":"endTime","type":"uint32"},
+				{"name":"showcasePercent","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "receiveTokenAddress",
+			"inputs": [
+				{"name":"answerId","type":"uint32"},
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "getTokenAddress",
+			"inputs": [
+				{"name":"id","type":"uint64"}
+			],
+			"outputs": [
+				{"name":"addr","type":"address"}
+			]
+		},
+		{
+			"name": "getAskParameters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"minAcceptFee","type":"uint128"},
+				{"name":"askIncomePercent","type":"uint128"}
+			]
+		},
+		{
+			"name": "setAskParameters",
+			"inputs": [
+				{"name":"minAcceptFee","type":"uint128"},
+				{"name":"askIncomePercent","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "withdraw",
+			"inputs": [
+				{"name":"addr","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setCreationParameters",
+			"inputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "receiveCreationParameters",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"}
+			]
+		},
+		{
+			"name": "getCreationParameters",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"minCreationFee","type":"uint128"},
+				{"name":"creationTopup","type":"uint128"}
+			]
+		},
+		{
+			"name": "changeManager",
+			"inputs": [
+				{"name":"manager","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "receiveManager",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"manager","type":"address"}
+			]
+		},
+		{
+			"name": "getManager",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"manager","type":"address"}
+			]
+		},
+		{
+			"name": "receiveInfo",
+			"inputs": [
+				{"name":"answerId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"totalSupply","type":"uint64"},
+				{"name":"publicKey","type":"uint256"}
+			]
+		},
+		{
+			"name": "getInfo",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"name","type":"string"},
+				{"name":"symbol","type":"string"},
+				{"name":"totalSupply","type":"uint64"},
+				{"name":"publicKey","type":"uint256"}
+			]
+		},
+		{
+			"name": "getTokenCode",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"code","type":"cell"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+		{
+			"name": "ASK_CT_nifi_ask_1",
+			"inputs": [
+				{"name":"id","type":"uint64"},
+				{"name":"token","type":"address"},
+				{"name":"issuer","type":"address"},
+				{"name":"price","type":"uint128"},
+				{"name":"endTime","type":"uint32"},
+				{"name":"showcasePercent","type":"uint32"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_name","type":"string"},
+		{"name":"_symbol","type":"string"},
+		{"name":"_tokenCode","type":"cell"},
+		{"name":"_totalSupply","type":"uint64"},
+		{"name":"_manager","type":"address"},
+		{"name":"_minCreationFee","type":"uint128"},
+		{"name":"_creationTopup","type":"uint128"},
+		{"name":"_minAcceptFee","type":"uint128"},
+		{"name":"_askIncomePercent","type":"uint128"}
+	]
+}
